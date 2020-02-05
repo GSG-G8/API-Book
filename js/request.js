@@ -1,6 +1,7 @@
 const searchQuery = document.querySelector(".search-query");
 const searchBtn = document.querySelector(".search-btn");
 const searchResults = document.querySelector(".search-results");
+const show = document.querySelector(".show-movie");
 
 searchBtn.addEventListener("click", function() {
     show.textContent=("");
