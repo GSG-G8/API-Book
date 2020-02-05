@@ -38,7 +38,7 @@
 
   .search-results {
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       
   }
 
@@ -82,11 +82,18 @@
     outline: none;
   }
 
+  .item, .show-movie {
+    width: 45%;
+  }
+
+  .show-movie p {
+    color: #fff;
+    line-height: 20px;
+  }
+
   .item {
     background: rgba(225,156,115,0.8);
-    /* text-align: center; */
     padding: 20px;
-    width: 500px;
     border-radius: 8px;
   }
 
@@ -104,4 +111,10 @@
     text-align: justify;
     line-height: 20px;
     margin-top: 27px;
+  }
+
+  .poster {
+    width: 430px;
+    height: 550px;
+    margin-bottom: 20px;
   }
