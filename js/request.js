@@ -37,7 +37,6 @@ searchBtn.addEventListener('click', function() {
             categories.textContent = obj.items[0].volumeInfo.categories[0];
             searchResults.appendChild(categories);
 
-
             const language=document.createElement('p');
             language.textContent = obj.items[0].volumeInfo.language;
             searchResults.appendChild(language);
@@ -45,11 +44,10 @@ searchBtn.addEventListener('click', function() {
             const description=document.createElement('p');
             description.textContent = obj.items[0].volumeInfo.description;
             searchResults.appendChild(description);
-
-        }
-    }
-    xhr.open('GET', url, true);
-    xhr.send();
+        }}
+            xhr.open('GET', url, true);
+            xhr.send();
+         
           
             const mykey = configObj.MY_KEY;
             const urlMovies = `https://api.themoviedb.org/3/search/movie?api_key=${mykey}&query=${search-query.value}`;
