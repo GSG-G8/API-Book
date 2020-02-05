@@ -67,8 +67,7 @@ searchBtn.addEventListener("click", function() {
         show.appendChild(msg);
       } else {
         const poster_path = movie["results"][0]["poster_path"];
-        const urlImage = `https://image.tmdb.org/t/p/w500/${poster_path}`;
-        console.log(urlImage, "urlImage");
+        const urlImage = `https://image.tmdb.org/t/p/w500/${poster_path}`
 
         const poster_img = document.createElement("img");
         poster_img.src = urlImage;
@@ -93,4 +92,4 @@ searchBtn.addEventListener("click", function() {
   };
   xhr1.open("GET", urlMovies, true);
   xhr1.send();
-});
+
