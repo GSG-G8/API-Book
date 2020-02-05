@@ -32,6 +32,20 @@ searchBtn.addEventListener('click', function() {
             searchResults.appendChild(pageCount);
 
 
+            const categories=document.createElement('p');
+            categories.textContent = obj.items[0].volumeInfo.categories[0];
+            searchResults.appendChild(categories);
+
+          
+            const language=document.createElement('p');
+            language.textContent = obj.items[0].volumeInfo.language;
+            searchResults.appendChild(language);
+
+            const description=document.createElement('p');
+            description.textContent = obj.items[0].volumeInfo.description;
+            searchResults.appendChild(description);
+
+
 
         }
     };
