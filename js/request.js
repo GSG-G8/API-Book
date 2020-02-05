@@ -1,3 +1,6 @@
+
+const mykey = configObj.MY_KEY;
+const show = document.querySelector(".show-movie");
 const searchQuery = document.querySelector('.search-query');
 const searchBtn = document.querySelector('.search-btn');
 const searchResults = document.querySelector('.search-results');
@@ -5,6 +8,7 @@ const searchResults = document.querySelector('.search-results');
 searchBtn.addEventListener('click', function() {
     const xhr = new XMLHttpRequest();
     const url = `https://www.googleapis.com/books/v1/volumes?q=${searchQuery.value}`;
+    const urlMovies = `https://api.themoviedb.org/3/search/movie?api_key=${mykey}&query=${search-query.value}`;
     xhr.onreadystatechange = () => {
         if (xhr.readyState == 4 && xhr.status == 200) {
             console.log('ready state');
@@ -30,11 +34,19 @@ searchBtn.addEventListener('click', function() {
             const pageCount=document.createElement('p');
             pageCount.textContent = obj.items[0].volumeInfo.pageCount;
             searchResults.appendChild(pageCount);
-
-
+          
+          const xhr1 = new XMLHttpRequest();
+          xhr1.onreadystatechange = () => {
+          if (xhr1.readyState === 4 && status === 200) {
+          const movie = JSON.parse(xhr1.responseText);
+          show.textContent = movie.genres[0].name;console.log(movie)
+  }
 
         }
     };
     xhr.open('GET', url, true);
     xhr.send();
+      
+    xhr1.open("GET", urlMovies, true);
+    xhr1.send();
 });
