@@ -47,7 +47,7 @@ const book = obj => {
 };
 
 const movie = obj => {
-  if (movie["results"].length === 0) {
+  if (obj["results"].length === 0) {
     const notFound = "There is no movie for this book";
     const msg = document.createElement("p");
     msg.textContent = notFound;
