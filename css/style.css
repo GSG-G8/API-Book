@@ -111,6 +111,8 @@
     text-align: justify;
     line-height: 20px;
     margin-top: 27px;
+    height: 350px;
+    overflow-y: scroll;
   }
 
   .poster {
@@ -258,6 +260,7 @@
 
 .main {
   width: 105%;
+  height: 100%;
 }
 
 .search-query {
