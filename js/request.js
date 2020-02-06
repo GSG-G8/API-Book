@@ -57,48 +57,6 @@ searchBtn.addEventListener("click", function() {
   };
   xhr.open("GET", url, true);
   xhr.send();
-
-  const mykey = configObj.MY_KEY;
-  const urlMovies = `https://api.themoviedb.org/3/search/movie?api_key=${mykey}&query=${searchQuery.value}`;
-
-  const xhr1 = new XMLHttpRequest();
-  xhr1.onreadystatechange = () => {
-    if (xhr1.readyState == 4 && xhr1.status == 200) {
-      const movie = JSON.parse(xhr1.responseText);
-
-      if (movie["results"].length === 0) {
-        const notFound = "There is no movie for this book";
-        const msg = document.createElement("p");
-        msg.textContent = notFound;
-        show.appendChild(msg);
-      } else {
-        const poster_path = movie["results"][0]["poster_path"];
-
-        const urlImage = `https://image.tmdb.org/t/p/w500/${poster_path}`;
-
-        const poster_img = document.createElement("img");
-        poster_img.src = urlImage;
-        poster_img.classList.add("poster");
-
-        show.appendChild(poster_img);
-
-        const titleMovie = document.createElement("p");
-        const original_title = movie["results"][0]["original_title"];
-        titleMovie.textContent = original_title;
-        show.appendChild(titleMovie);
-
-        const view = document.createElement("p");
-        const overview = movie["results"][0]["overview"];
-        view.textContent = overview;
-        show.appendChild(view);
-
-        const date = document.createElement("p");
-        const release_date = movie["results"][0]["release_date"];
-        date.textContent = release_date;
-        show.appendChild(date);
-
-        searchResults.appendChild(show);
-      }
     }
   };
   xhr1.open("GET", urlMovies, true);
